@@ -14,6 +14,8 @@ XMLHttpRequestConstructor = XMLHttpRequest, element = document.getElementById("n
 			})
     }
   };
+
   xhttp.open("GET", api, true);
   xhttp.send();
+  
 }
