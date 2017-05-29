@@ -26,9 +26,13 @@ I need to learn more about the XMLHttpRequest process and find out exactly what
 goes on behind the scenes.
 
 I think that I have made a positive effort to mock and test the API sending
-using DI and fake constructors. I also tested the api response and responseText
-processing as well as I could. I see now that these tests should have been broken
-up into perhaps three more manageable tests as follows;
+using DI and fake constructors. I got a bit confused with creating a text node
+and appendChild which I mocked to an innerHTML addition so the code became a
+little but convoluted in extracting the specific parts to be tested.
+
+I also tested the api response and responseText processing as well as I could.
+I see now that these tests should have been broken up into perhaps three more
+manageable tests as follows;
 
 A test of XMLHttpRequest instantiation
 A test of XMLHttpRequest sending and responding
