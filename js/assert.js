@@ -1,4 +1,6 @@
-function updateErrorSection (e) {
+(function(exports){
+
+  function updateErrorSection (e) {
   console.log(e.message)
   var newli = document.createElement("li");
   var text = document.createTextNode(e.message);
@@ -14,8 +16,6 @@ function updateSection(assert) {
   document.getElementById("testOutput").appendChild(newli)
 }
 
-
-(function(exports){
 
 function Assert(subject, testName, expectation) {
   this._subject = subject;

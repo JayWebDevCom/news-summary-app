@@ -1,12 +1,45 @@
-unused note modules
-more commits necessary - i don’t want to until there is progress
-ran out of time, must move on but wanted to learn about mocking and apis
-fake button pressing
-more design - css etc
-more news aspects re user stories but I ran out of time
+Hi Kay, I hope you dont mind, but I have another code review if possible.
+This time it is for news app and API testing. I think I really need to get these
+principles squared away which is why I am asking for you to steer and guide my
+efforts. Thanks very much indeed.
 
-
+Please use
 node node_modules/http-server/bin/http-server
-double the assert
+to run this app.
 
-use environment to protect and withhold my api key
+I initialized and installed npm which gave me the associated node modules but
+they may not be needed at this stage - except for http-server.
+
+I would have liked to have covered this project using express and npm start
+methods but I have not had time yet to learn express and its intricacies but
+I will find time to do so.
+
+I should have made more commits but I have a habit of only committing when there
+is obvious progress which in this challenge took a while. I should commit as I develop
+not only when things work as intended.
+
+I think that I have mocked and tested the API sending appropriately. I also
+tested the api response and responseText processing as well as I could. I see
+now that these tests should have been broken up into perhaps three more manageable
+tests as follows;
+
+A test of XMLHttpRequest instantiation
+A test of XMLHttpRequest sending and responding
+A test of XMLHttpRequest responsetext processing.
+
+I would still like to mock and test the button pressing and I intend to learn how
+to do so soon amnd implement it but I am just under such time pressure to move on
+ to subsequent projects.
+
+I would like to improve on the aesthetics and appearance of my app but I felt
+it best to concentrate on functionality at this point.
+
+I have not covered all the user stories - again due to time pressure.
+My API key should be protected with environment variables and not exposed.
+
+I have wrapped my tests code wrapped in modular syntax and exported as necessary,
+but I still feel that they are accessible from anywhere as a result of the IIFE
+which leads me to believe that they are not 'private' or 'protected' perhaps?
+
+I would have liked to test instantiation of XMLHttpRequest objects but I ran
+out of time.
