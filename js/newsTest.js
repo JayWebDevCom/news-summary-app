@@ -44,9 +44,7 @@ loadNews(api = "http://www.example.com",  XMLHttpRequestConstructor = FakeXMLHtt
 
 var url = JSON.parse(new FakeXMLHttpRequest().responseText).response.results[0].webUrl
 var title = JSON.parse(new FakeXMLHttpRequest().responseText).response.results[0].webTitle
-
 var link = "<a href=\"" + url + "\">" + title + "</a>"
-
 
 var assert = new Assert(fakeAppElement.arrayOfItems[0].innerHTML, "API is functioning", link)
 
