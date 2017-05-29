@@ -1,0 +1,27 @@
+{
+  "name": "news-summary-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.15.3",
+    "guardian-js": "^1.0.8",
+    "guardian-news": "^0.0.2",
+    "http-server": "^0.10.0",
+    "nodemon": "^1.11.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JayWebDevCom/news-summary-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JayWebDevCom/news-summary-app/issues"
+  },
+  "homepage": "https://github.com/JayWebDevCom/news-summary-app#readme"
+}
