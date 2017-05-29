@@ -44,12 +44,24 @@ loadNews(api = "http://www.example.com",  XMLHttpRequestConstructor = FakeXMLHtt
 
 var url = JSON.parse(new FakeXMLHttpRequest().responseText).response.results[0].webUrl
 var title = JSON.parse(new FakeXMLHttpRequest().responseText).response.results[0].webTitle
-var link = "<a href=\"" + url + "\">" + title + "</a>"
+var link1 = "<a href=\"" + url + "\">" + title + "</a>"
+var url2 = JSON.parse(new FakeXMLHttpRequest().responseText).response.results[1].webUrl
+var title2 = JSON.parse(new FakeXMLHttpRequest().responseText).response.results[1].webTitle
+var link2 = "<a href=\"" + url2 + "\">" + title2 + "</a>"
 
-var assert = new Assert(fakeAppElement.arrayOfItems[0].innerHTML, "API is functioning", link)
+var myArray = [fakeAppElement.arrayOfItems[0].innerHTML, fakeAppElement.arrayOfItems[1].innerHTML]
+
+var assert1 = new Assert(myArray[0], "API is functioning", [link1, link2][0])
+var assert2 = new Assert(myArray[1], "API is functioning", [link1, link2][1])
 
   try {
-    assert.isEqual()
+    assert1.isEqual()
+  } catch(e) {
+    updateErrorSection(e)
+  }
+
+  try {
+    assert2.isEqual()
   } catch(e) {
     updateErrorSection(e)
   }
