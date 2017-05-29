@@ -27,6 +27,7 @@ function FakeXMLHttpRequest() {
  }
 })
 }
+
 FakeXMLHttpRequest.prototype.open = function(){
 }
 FakeXMLHttpRequest.prototype.send = function(){

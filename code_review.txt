@@ -1,0 +1,12 @@
+unused note modules
+more commits necessary - i don’t want to until there is progress
+ran out of time, must move on but wanted to learn about mocking and apis
+fake button pressing
+more design - css etc
+more news aspects re user stories but I ran out of time
+
+
+node node_modules/http-server/bin/http-server
+double the assert
+
+use environment to protect and withhold my api key
