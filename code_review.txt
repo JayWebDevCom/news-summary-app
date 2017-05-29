@@ -40,7 +40,7 @@ A test of XMLHttpRequest responseText processing.
 
 I perhaps should use mocha? Im not sure which tools to use and when. I feel a
 little overwhelmed my the number of available tools and I do not know which ones
-work together and when
+work together and when.
 
 I would still like to mock and test the button pressing and I intend to learn how
 to do so soon and implement it but I am just under such time pressure to move on
