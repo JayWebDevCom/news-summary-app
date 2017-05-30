@@ -36,7 +36,11 @@ manageable tests as follows;
 
 A test of XMLHttpRequest instantiation
 A test of XMLHttpRequest sending and responding
-A test of XMLHttpRequest responseText processing.
+A test of XMLHttpRequest responseText processing
+
+I could have used a more MVC approach to process the incoming responseText and
+format it to appear as a link. The controller could run the XMLHttpRequest,
+passing the response text to a view model which updates the page.
 
 I perhaps should use mocha? Im not sure which tools to use and when. I feel a
 little overwhelmed my the number of available tools and I do not know which ones
