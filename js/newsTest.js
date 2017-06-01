@@ -27,9 +27,9 @@ var responseText = JSON.stringify({
 function FakeXMLHttpRequest() {
   this.readyState = 0
   this.status = 0
-  this.responseText = ''
-  this.onreadystatechange = function () {}
 }
+
+FakeXMLHttpRequest.prototype.onreadystatechange = function() {}
 
 FakeXMLHttpRequest.prototype.open = function(){
   this.readyState = 4
@@ -40,30 +40,30 @@ FakeXMLHttpRequest.prototype.open = function(){
 
 FakeXMLHttpRequest.prototype.send = function() {}
 
-var fakeAppElement = {}
-fakeAppElement.arrayOfItems = []
-
-fakeAppElement.appendChild = function(thing){
-  this.arrayOfItems.push(thing)
+var fakeAppElement = {
+  arrayOfItems : [],
+  appendChild : function(thing) {
+    this.arrayOfItems.push(thing)
+  }
 }
 
 loadNews(api = "http://www.example.com",  XMLHttpRequestConstructor = FakeXMLHttpRequest, element = fakeAppElement)
 
 var sentHTTPRequest = new FakeXMLHttpRequest()
 sentHTTPRequest.open()
-var receivedResponseText = JSON.parse(sentHTTPRequest.responseText)
+var receivedResponseText = JSON.parse(sentHTTPRequest.responseText).response.results
 
-var url = receivedResponseText.response.results[0].webUrl
-var title = receivedResponseText.response.results[0].webTitle
+var url = receivedResponseText[0].webUrl
+var title = receivedResponseText[0].webTitle
 var link1 = "<a href=\"" + url + "\">" + title + "</a>"
-var url2 = receivedResponseText.response.results[1].webUrl
-var title2 = receivedResponseText.response.results[1].webTitle
+var url2 = receivedResponseText[1].webUrl
+var title2 = receivedResponseText[1].webTitle
 var link2 = "<a href=\"" + url2 + "\">" + title2 + "</a>"
 
-var myArray = [fakeAppElement.arrayOfItems[0].innerHTML, fakeAppElement.arrayOfItems[1].innerHTML]
+var fakeAppElementArrayOfItems = [fakeAppElement.arrayOfItems[0].innerHTML, fakeAppElement.arrayOfItems[1].innerHTML]
 
-var assert1 = new Assert(link1, "API is functioning for first response element", myArray[0])
-var assert2 = new Assert(link2, "API is functioning for second response element", myArray[1])
+var assert1 = new Assert(link1, "API is functioning for first response element", fakeAppElementArrayOfItems[0])
+var assert2 = new Assert(link2, "API is functioning for second response element", fakeAppElementArrayOfItems[1])
 
   try {
     assert1.isEqual()
