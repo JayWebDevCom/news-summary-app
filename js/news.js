@@ -1,6 +1,8 @@
 function loadNews(api = "https://content.guardianapis.com/search?api-key=8aa81d1f-a6c7-42dd-8579-2af984125813",
 XMLHttpRequestConstructor = XMLHttpRequest, element = document.getElementById("news")) {
+
   var xhttp = new XMLHttpRequestConstructor();
+
   xhttp.onreadystatechange = function() {
 
     if (this.readyState == 4 && this.status == 200) {
@@ -17,5 +19,7 @@ XMLHttpRequestConstructor = XMLHttpRequest, element = document.getElementById("n
 
   xhttp.open("GET", api, true);
   xhttp.send();
-  
+
+  return xhttp
+
 }
