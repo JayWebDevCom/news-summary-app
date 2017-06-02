@@ -47,8 +47,10 @@ var fakeAppElement = {
   }
 }
 
-var sentHTTPRequest = loadNews(api = "http://www.example.com",  XMLHttpRequestConstructor = FakeXMLHttpRequest, element = fakeAppElement)
+loadNews(api = "http://www.example.com",  XMLHttpRequestConstructor = FakeXMLHttpRequest, element = fakeAppElement)
 
+var sentHTTPRequest = new FakeXMLHttpRequest()
+sentHTTPRequest.open()
 var receivedResponseText = JSON.parse(sentHTTPRequest.responseText).response.results
 
 var url = receivedResponseText[0].webUrl
