@@ -1,14 +1,15 @@
 (function(exports){
 
-  function updateErrorSection (e) {
-  console.log(e.message)
+  var updateErrorSection = function(assert) {
+  var string = "Failed - " + assert._testName
+  console.log(string)
   var newli = document.createElement("li");
-  var text = document.createTextNode(e.message);
+  var text = document.createTextNode(string);
   newli.appendChild(text);
   document.getElementById("testOutput").appendChild(newli)
 }
 
-function updateSection(assert) {
+var updatePassSection = function(assert) {
   var output = "Passed - " + assert._testName
   var newli = document.createElement("li");
   var text = document.createTextNode(output);
@@ -17,33 +18,33 @@ function updateSection(assert) {
 }
 
 
-function Assert(subject, testName, expectation) {
+var Assert = function(subject, testName, expectation) {
   this._subject = subject;
   this._testName = testName;
   this._expectation = expectation;
 }
 
 Assert.prototype.isEqual = function () {
-  if (this._subject == this._expectation) {
-    updateSection(this)
+  if (this._subject === this._expectation) {
+    updatePassSection(this)
   } else {
-    throw new Error("Failed - " + this._testName);
+    updateErrorSection(this)
   }
 };
 
 Assert.prototype.isInstanceOf = function () {
   if ((this._subject instanceof this._expectation)) {
-    updateSection(this)
+    updatePassSection(this)
   } else {
-    throw new Error("Failed - " + this._testName);
+    updateErrorSection(this)
   }
 };
 
 Assert.prototype.isTypeOf = function () {
   if ((typeof this._subject === this._expectation)) {
-    updateSection(this)
+    updatePassSection(this)
   } else {
-    throw new Error("Failed - " + this._testName);
+    updateErrorSection(this)
   }
 };
 

@@ -1,13 +1,9 @@
-function testingTheTest() {
+var testingTheTest = function() {
   var assert = new Assert('abc', "Testing the test", 'abc')
-  try {
-    assert.isEqual()
-  } catch(e) {
-    updateErrorSection(e)
-  }
+  assert.isEqual()
 }
 
-function testingTheAPI() {
+var testingTheAPI = function() {
 
 var responseText = JSON.stringify({
   "response": {
@@ -24,7 +20,7 @@ var responseText = JSON.stringify({
 }
 })
 
-function FakeXMLHttpRequest() {
+var FakeXMLHttpRequest = function() {
   this.readyState = 0
   this.status = 0
 }
@@ -63,17 +59,8 @@ var fakeAppElementArrayOfItems = [fakeAppElement.arrayOfItems[0].innerHTML, fake
 var assert1 = new Assert(link1, "API is functioning for first response element", fakeAppElementArrayOfItems[0])
 var assert2 = new Assert(link2, "API is functioning for second response element", fakeAppElementArrayOfItems[1])
 
-  try {
-    assert1.isEqual()
-  } catch(e) {
-    updateErrorSection(e)
-  }
-
-  try {
-    assert2.isEqual()
-  } catch(e) {
-    updateErrorSection(e)
-  }
+assert1.isEqual()
+assert2.isEqual()
 
 }
 
