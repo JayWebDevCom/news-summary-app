@@ -2,7 +2,7 @@
 ---
 
 #### Description
-This application uses the Guardian API to retrieve a list of news headlines. These headlines are then transformed into corresponding links which can be followed to read the full article on the Guardian Website.
+This application uses the Guardian API to retrieve a list of news headlines. These headlines are the dynamically transformed into corresponding links which can be followed to read the full article on the Guardian Website.
 
 The JSON response from the request to the Guardian API is read and the links are formed programatically and appended to the page.
 
@@ -19,7 +19,7 @@ Clone this repo
 
 #### Tests
 * Tests Page - http://localhost:8080/tests.html
-* I have used dependency injection and fake constructors to mock and test the API request and response in the following ways:
+* I have used dependency injection and fake constructors to mock and test the API request and response through:
   - a test of XMLHttpRequest instantiation
   - a test of XMLHttpRequest sending and responding
   - a test of XMLHttpRequest responseText processing
