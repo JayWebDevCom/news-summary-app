@@ -19,3 +19,7 @@ Clone this repo
 
 #### Tests
 * Tests Page - http://localhost:8080/tests.html
+* I have used dependency injection and fake constructors to mock and test the API request and response in the following ways:
+  - a test of XMLHttpRequest instantiation
+  - a test of XMLHttpRequest sending and responding
+  - a test of XMLHttpRequest responseText processing
