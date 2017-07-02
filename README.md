@@ -15,5 +15,8 @@ Clone this repo
 
 #### Navigation
 * News Page - http://localhost:8080/index.html
-Click the button `Click To Get The News` to retirive
+* Click the button `Click To Get The News` to make the API request and append links for news headlines to the homepage.
+
+
+#### Tests
 * Tests Page - http://localhost:8080/tests.html
