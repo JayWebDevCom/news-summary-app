@@ -1,6 +1,8 @@
 ### News Summary App Using The Guardian API
 ---
 
+![News](http://justnewsinternational.com/wp-content/uploads/2014/02/Headlines.jpg)
+
 #### Description
 This application uses the Guardian API to retrieve a list of news headlines. These headlines are the dynamically transformed into corresponding links which can be followed to read the full article on the Guardian Website.
 
